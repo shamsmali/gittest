@@ -5,16 +5,26 @@ package com.git.test.test;
  *
  */
 public class App {
-	public static void main(String[] args) {
-		String f = "sfsdfsdfsdf";
-		String sdf = "sdf sdfsdfsdfsdf";
-		System.out.println("Hello World!" + sdf);
+	static int itr = 0;
 
-		System.out.println("Hello World!" + f);
-        System.out.println("how it looks!" + f);
-        
-		System.out.println("Hello Worsddsfld!" + sdf);
-		
-		System.out.println("Hello prod!" + sdf);
+	public static void main(String[] args) {
+		double s = 876876876;
+
+		double g = s / 2 / 2;
+
+		findSqrt(s, g);
+	}
+
+	private static void findSqrt(double s, double g) {
+		if ((g * g) - s < 0.001) {
+			System.out.println(g);
+			return;
+		} else {
+			double approxSqrt = 0.5 * ((s / g) + g);
+			System.out.println("after itr " + itr + " approx is " + approxSqrt);
+			itr++;
+			findSqrt(s, approxSqrt);
+		}
+
 	}
 }
